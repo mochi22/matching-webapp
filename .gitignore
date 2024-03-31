@@ -1,0 +1,21 @@
+# Node.js dependencies
+/node_modules
+
+# Mac-specific
+.DS_Store
+
+# Virtual environment
+/venv
+.venv
+
+# Flask-specific
+__pycache__
+*.pyc
+
+# MongoDB-specific
+*.bson
+*.log
+*.mdb
+*.mdf
+*.nsf
+*.sqlite

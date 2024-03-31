@@ -1,7 +1,7 @@
 // src/App.js
 
 import React, { useState, useEffect } from 'react';
-import Home from './components/Home';
+import MyPage from './components/MyPage';
 import PostUserInfo from './components/PostUserInfo';
 import UserList from './components/UserList';
 import SaearchUser from './components/SearchUser';
@@ -52,7 +52,7 @@ function App() {
 
         {/* 各ページへのルート設定 */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/mypage" element={<MyPage />} />
           <Route path="/postuserinfo" element={<PostUserInfo />} />
           <Route path="/alluser" element={<UserList />} />
           <Route path="/searchuser" element={<SaearchUser />} />

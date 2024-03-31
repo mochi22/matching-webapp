@@ -186,20 +186,37 @@ def get_filtered_users(gender, hobbies):
         return 'Missing gender or hobbies parameters', 400  # クライアントエラーを返す場合
 
 
-@app.route('/user_info', methods=["GET"])
+@app.route('/user_info', methods=["GET", "PUT"])
 def get_user_info():
-    print("get user info")
-    user_uuid = request.headers.get('Authorization').split(' ')[1]  # リクエストヘッダーからuser_uuidを取得
-    session['user_uuid'] = user_uuid  # セッションにuser_uuidを保存
-    # ここでセッションに保存されたuser_uuidを使用してデータを取得するなどの処理を行う
-    authenticated_user = list(users_collection.find({'user_uuid': user_uuid}, {'_id': 0}))
-    print("authenticated_user",authenticated_user)
-    # username = authenticated_user["username"]
-    print('Data received')
-    if len(authenticated_user)==1:
-        authenticated_user = authenticated_user[0]
-    return authenticated_user
-
+    if request.method == 'GET':
+        print("get user info")
+        user_uuid = request.headers.get('Authorization').split(' ')[1]  # リクエストヘッダーからuser_uuidを取得
+        session['user_uuid'] = user_uuid  # セッションにuser_uuidを保存
+        # ここでセッションに保存されたuser_uuidを使用してデータを取得するなどの処理を行う
+        authenticated_user = list(users_collection.find({'user_uuid': user_uuid}, {'_id': 0}))
+        print("authenticated_user",authenticated_user)
+        # username = authenticated_user["username"]
+        print('Data received')
+        if len(authenticated_user)==1:
+            authenticated_user = authenticated_user[0]
+        return authenticated_user
+    if request.method == 'PUT':
+        # ユーザー情報を更新するエンドポイント
+        data = request.json
+        user_data = {}
+        for key, value in data.items():
+            user_data[key] = value
+        print("user_data",user_data)
+        # 更新する条件を指定
+        query = {'user_uuid': user_data['user_uuid']}  # ユーザーのIDに応じて変更する必要がありま
+        # 更新したい内容を指定
+        new_data = {'$set': user_data}
+        # 更新
+        result = users_collection.update_one(query, new_data)    
+        print(result)
+        updated = users_collection.find({'user_uuid': user_data['user_uuid']})
+        print(list(updated))
+        return "update user info"
 
 ##### DELETE
 ## delete user

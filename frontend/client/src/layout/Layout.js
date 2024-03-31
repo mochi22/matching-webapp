@@ -20,7 +20,7 @@ const Layout = ({ children, isLoggedIn, username }) => {
       <header>
         <nav>
         <ul>
-          <li><Link to="/" state={{ isLoggedIn, username }}>Home</Link></li>
+          <li><Link to="/mypage" state={{ isLoggedIn, username }}>Mypage</Link></li>
           <li><Link to="/postuserinfo">post user info</Link></li>
           <li><Link to="/alluser">alluser</Link></li>
           <li><Link to="/searchuser">search user</Link></li>
@@ -28,13 +28,7 @@ const Layout = ({ children, isLoggedIn, username }) => {
           <li><Link to="/deleteuser">delete user</Link></li>
           <li><Link to="/deletealluser">all delete user</Link></li>
           {isLoggedIn ? null : <li><Link to="/registeruser">register user</Link></li>}
-          {/* <li><Link to="/login">login user</Link></li>
-          <li><Link to="/logout">logout user</Link></li> */}
-            {isLoggedIn ? <li><Link to="/logout">logout user</Link></li> : <li><Link to="/login">login user</Link></li>} 
-            {/* {isLoggedIn ? <li>you are logged in</li> : <li><Link to="/login">login user</Link></li>} */}
-            
-
-          {/* <li>{username && <span>Welcome, {username}</span>}</li> */}
+          {isLoggedIn ? <li><Link to="/logout">logout user</Link></li> : <li><Link to="/login">login user</Link></li>} 
           <li>{isLoggedIn ? <span>Welcome, {username}</span> : <span> anonymous</span>}</li>
         </ul>
         </nav>
