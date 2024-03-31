@@ -1,4 +1,4 @@
-This is my matching web app
+This is my matching web app.
 
 ## Using
 
