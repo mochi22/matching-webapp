@@ -24,7 +24,7 @@ const PostUserInfo = () => {
       hobbies: hobbies,
       interests: interests
     };
-    axios.post('http://localhost:5000/postuserinfo', userData, {
+    axios.post('http://localhost:5000/self_user', userData, {
       headers: {
         'Authorization': `Bearer ${userUUID}`  // ヘッダーにuser_uuidを含める
       }

@@ -26,7 +26,7 @@ const UserList = () => {
   //         console.error('No user selected');
   //         return;
   //       }
-  //       const response = await axios.post('http://localhost:5000/add_favorite', {
+  //       const response = await axios.post('http://localhost:5000/favorites', {
   //         user_uuid: current_user_uuid,
   //         favorite_user_uuid: selectedUser.user_uuid
   //       });

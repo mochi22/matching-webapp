@@ -25,7 +25,7 @@ const MyPage = () => {
     // ユーザー情報を取得する関数を定義
     const fetchUserInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/user_info', {
+        const response = await axios.get('http://localhost:5000/self_user', {
           headers: {
             'Authorization': `Bearer ${userUUID}`  // ヘッダーにuser_uuidを含める
           }
@@ -46,7 +46,7 @@ const MyPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put('http://localhost:5000/user_info', userinfo);
+      const response = await axios.put('http://localhost:5000/self_user', userinfo);
       setMessage('User information updated successfully');
     } catch (error) {
       setMessage('Error updating user information');

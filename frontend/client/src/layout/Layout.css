@@ -1,0 +1,44 @@
+/* src/layout/Layout.css */
+
+/* ナビゲーションバーのスタイル */
+nav {
+    background-color: #333; /* ナビゲーションバーの背景色 */
+    color: white; /* ナビゲーションバーのテキスト色 */
+    padding: 10px; /* ナビゲーションバーの上下のパディング */
+    
+  }
+  
+  /* ナビゲーションバー内のリンクのスタイル */
+  nav ul {
+    list-style-type: none; /* リストのマーカーを削除 */
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    display: inline; /* リストアイテムを横並びに配置 */
+    /* margin-right: 20px; 各リンクの右側のマージン */
+    flex: auto;
+  }
+  
+  nav ul li a {
+    color: white; /* リンクのテキスト色 */
+    /* text-decoration: none;*/ /*リンクの下線を削除 */
+    font-weight: bold; /* リンクのテキストを太字にする */
+    
+  }
+  
+  /* ログイン/ログアウトリンクのスタイル
+  .logout-link {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px; /* ログアウトリンクの左側のマージン
+  } */
+  
+  .username{
+    color: yellow;
+    
+    /* margin-left: 20px; ログアウトリンクの左側のマージン */
+    /* text-align: right; */
+  }

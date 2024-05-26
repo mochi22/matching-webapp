@@ -9,9 +9,10 @@ const FavoriteButton = ({ user }) => {
 
 
   const handleAddFavorite = () => {
-    axios.post('http://localhost:5000/add_favorite', {
+    axios.post('http://localhost:5000/favorites', {
           user_uuid: current_user_uuid,
-          favorite_user_uuid: user.user_uuid
+          favorite_user_uuid: user.user_uuid,
+          state: "like"
       })
       .then(response => {
         console.log('Favorite added:', response.data);

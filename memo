@@ -24,4 +24,16 @@ matching_service/
 必要に応じて、スタイリングやエラーハンドリングなどの機能を追加してください。
 
 
+## test
 
+# users
+user a,b,c,d
+
+# like
+a like b
+a like d
+b like a 
+c like a 
+
+# matcing 
+a <-> b

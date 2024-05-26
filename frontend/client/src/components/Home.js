@@ -16,7 +16,7 @@ const Home = () => {
   //   // ユーザー情報を取得する関数を定義
   //   const fetchUserInfo = async () => {
   //     try {
-  //       const response = await axios.get('http://localhost:5000/user_info', {
+  //       const response = await axios.get('http://localhost:5000/self_user', {
   //         headers: {
   //           'Authorization': `Bearer ${userUUID}`  // ヘッダーにuser_uuidを含める
   //         }

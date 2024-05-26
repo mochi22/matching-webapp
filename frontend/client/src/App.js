@@ -6,6 +6,7 @@ import PostUserInfo from './components/PostUserInfo';
 import UserList from './components/UserList';
 import SaearchUser from './components/SearchUser';
 import FavoriteUserList from './components/FavoriteUserList';
+import Matching from './components/Matching';
 import ConfirmRegister from './components/ConfirmRegister';
 import DeleteUser from './components/DeleteUser';
 import DeleteAllUser from './components/DeleteAllUser';
@@ -57,6 +58,7 @@ function App() {
           <Route path="/alluser" element={<UserList />} />
           <Route path="/searchuser" element={<SaearchUser />} />
           <Route path="/favorites" element={<FavoriteUserList />} />
+          <Route path="/match" element={<Matching />} />
           <Route path="/confirmation-register" element={<ConfirmRegister />} />
           <Route path="/deleteuser" element={<DeleteUser />} />
           <Route path="/deletealluser" element={<DeleteAllUser />} />
